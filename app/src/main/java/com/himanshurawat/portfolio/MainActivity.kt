@@ -12,6 +12,7 @@ import android.widget.FrameLayout
 import com.himanshurawat.portfolio.ui.PersonalFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), View.OnTouchListener {
 
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
         fragmentManager = supportFragmentManager
         activity_main_seekbar.progress = 20
         activity_main_seekbar.setOnTouchListener(this)
+
         setup()
 
     }
