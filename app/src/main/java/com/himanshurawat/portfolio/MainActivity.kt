@@ -1,15 +1,13 @@
 package com.himanshurawat.portfolio
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.fragment.app.FragmentManager
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.widget.FrameLayout
-import com.himanshurawat.portfolio.ui.PersonalFragment
+import com.himanshurawat.portfolio.ui.personal.PersonalFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -57,7 +55,7 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
 
     private fun setup(){
         fragmentManager.beginTransaction().
-                replace(R.id.content_main_frame_layout_container,PersonalFragment(),"PersonalFragment").
+                replace(R.id.content_main_frame_layout_container, PersonalFragment(),"PersonalFragment").
                 commit()
     }
 }
