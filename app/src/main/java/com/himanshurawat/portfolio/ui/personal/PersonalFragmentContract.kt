@@ -15,8 +15,9 @@ interface PersonalFragmentContract {
     }
 
     interface Presenter{
-        fun validateFirstName(firstName: String)
-        fun validateEmail(email: String)
-        fun validateMobileNumber(mobileNumber: String)
+        fun validate(firstName: String,email: String, mobileNumber: String): Boolean
+        fun isValidFirstName(firstName: String): Boolean
+        fun isValidEmail(email: String): Boolean
+        fun isValidMobileNumber(mobileNumber: String): Boolean
     }
 }

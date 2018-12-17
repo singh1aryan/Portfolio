@@ -1,5 +1,6 @@
 package com.himanshurawat.portfolio.ui.personal
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,11 +12,10 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.himanshurawat.portfolio.R
+import com.himanshurawat.portfolio.ui.main.PortfolioMakerEventListener
 
-class PersonalFragment : androidx.fragment.app.Fragment(), PersonalFragmentContract.View {
+class PersonalFragment : androidx.fragment.app.Fragment(), PersonalFragmentContract.View{
 
-
-    private lateinit var seekBar: SeekBar
     private lateinit var presenter: PersonalFragmentContract.Presenter
 
     private lateinit var firstNameTextInputLayout: TextInputLayout
@@ -28,35 +28,39 @@ class PersonalFragment : androidx.fragment.app.Fragment(), PersonalFragmentContr
     private lateinit var mobileNumberTextInputEditText: TextInputEditText
     private lateinit var addressTextInputEditText: TextInputEditText
 
-
     private lateinit var nextQuestionButton: MaterialButton
+
+    private lateinit var listener: PortfolioMakerEventListener
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try{
+            this.listener = context as PortfolioMakerEventListener
+        }catch (e: ClassCastException) {
+            throw ClassCastException(context.toString() + " must implement PortfolioMakerEventListener")
+        }
+    }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view =  inflater.inflate(R.layout.fragment_personal,container,false)
         presenter = PersonalFragmentPresenterImpl(this)
 
-
-        firstNameTextInputEditText = view.findViewById(R.id.fragment_personal_first_name_text_input_edit_text)
-        lastNameTextInputEditText = view.findViewById(R.id.fragment_personal_last_name_text_input_edit_text)
-        emailTextInputEditText = view.findViewById(R.id.fragment_personal_email_text_input_edit_text)
-        mobileNumberTextInputEditText = view.findViewById(R.id.fragment_personal_mobile_number_text_input_edit_text)
-        addressTextInputEditText = view.findViewById(R.id.fragment_personal_address_text_input_edit_text)
-
-        firstNameTextInputLayout = view.findViewById(R.id.fragment_personal_first_name_text_input_layout)
-        emailTextInputLayout = view.findViewById(R.id.fragment_personal_email_text_input_layout)
-        mobileNumberTextInputLayout = view.findViewById(R.id.fragment_personal_mobile_number_text_input_layout)
-
-
-        nextQuestionButton = view.findViewById(R.id.fragment_personal_next_question_button)
+        setup(view)
 
         nextQuestionButton.setOnClickListener {
-            firstNameTextInputLayout.isErrorEnabled = false
-            mobileNumberTextInputLayout.isErrorEnabled = false
-            emailTextInputLayout.isErrorEnabled = false
 
-            presenter.validateFirstName(firstNameTextInputEditText.text.toString())
-            presenter.validateEmail(emailTextInputEditText.text.toString())
-            presenter.validateMobileNumber(mobileNumberTextInputEditText.text.toString())
+            resetTextInputLayoutErrorMessages()
+
+            val firstName = firstNameTextInputEditText.text.toString()
+            val email = emailTextInputEditText.text.toString()
+            val mobileNumber = mobileNumberTextInputEditText.text.toString()
+
+            if(presenter.validate(firstName,email,mobileNumber)){
+                listener.nextQuestionButtonClicked("PersonalFragment")
+            }
+
+
 
         }
 
@@ -82,5 +86,31 @@ class PersonalFragment : androidx.fragment.app.Fragment(), PersonalFragmentContr
     override fun setMobilePhoneError(error: String) {
         mobileNumberTextInputLayout.isErrorEnabled = true
         mobileNumberTextInputLayout.error = error
+    }
+
+    private fun setup(view: View){
+        //TextInputEditText
+        firstNameTextInputEditText = view.findViewById(R.id.fragment_personal_first_name_text_input_edit_text)
+        lastNameTextInputEditText = view.findViewById(R.id.fragment_personal_last_name_text_input_edit_text)
+        emailTextInputEditText = view.findViewById(R.id.fragment_personal_email_text_input_edit_text)
+        mobileNumberTextInputEditText = view.findViewById(R.id.fragment_personal_mobile_number_text_input_edit_text)
+        addressTextInputEditText = view.findViewById(R.id.fragment_personal_address_text_input_edit_text)
+
+        //TextInputLayout
+        firstNameTextInputLayout = view.findViewById(R.id.fragment_personal_first_name_text_input_layout)
+        emailTextInputLayout = view.findViewById(R.id.fragment_personal_email_text_input_layout)
+        mobileNumberTextInputLayout = view.findViewById(R.id.fragment_personal_mobile_number_text_input_layout)
+
+        //MaterialButton
+        nextQuestionButton = view.findViewById(R.id.fragment_personal_next_question_button)
+    }
+
+    private fun resetTextInputLayoutErrorMessages(){
+        firstNameTextInputLayout.isErrorEnabled = false
+        firstNameTextInputLayout.helperText = "*Required"
+        mobileNumberTextInputLayout.isErrorEnabled = false
+        mobileNumberTextInputLayout.helperText = "*Required"
+        emailTextInputLayout.isErrorEnabled = false
+        emailTextInputLayout.helperText = "*Required"
     }
 }
