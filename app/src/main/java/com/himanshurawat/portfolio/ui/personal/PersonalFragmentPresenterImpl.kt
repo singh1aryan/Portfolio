@@ -13,7 +13,7 @@ class PersonalFragmentPresenterImpl(private val view: PersonalFragmentContract.V
 
     override fun isValidFirstName(firstName: String):Boolean {
         if(firstName.isEmpty()){
-            view.setFirstNameError("Your Portfolio, Needs Your Name.")
+            view.setFirstNameError("Your Portfolio needs your Name.")
             return false
         }
         return true
