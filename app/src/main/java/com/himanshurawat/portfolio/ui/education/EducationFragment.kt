@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.himanshurawat.portfolio.R
 
-class EducationFragment: Fragment() {
+class EducationFragment: Fragment(), EducationFragmentContract.View {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
