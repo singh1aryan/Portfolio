@@ -6,21 +6,20 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_education_next_question_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/addEduc">
 
     </androidx.recyclerview.widget.RecyclerView>
 
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/fragment_education_next_question_button"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_height="wrap_content"
@@ -35,18 +34,26 @@
         />
 
     <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/colorGrey   "
-        android:layout_marginBottom="16dp"
-        android:text="Go Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/colorGrey"
+            android:layout_marginBottom="16dp"
+            android:text="Go Back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:id="@+id/backButton"/>
+    <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="182dp"
+            android:layout_height="49dp"
+            android:textColor="@color/colorGrey"
+            android:text="Go Back"
+            android:id="@+id/addEduc"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="101dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="101dp" android:layout_marginBottom="11dp"
+            app:layout_constraintBottom_toTopOf="@+id/nextButton"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

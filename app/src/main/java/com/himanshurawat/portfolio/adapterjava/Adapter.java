@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.himanshurawat.portfolio.R;
@@ -14,9 +15,14 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder> {
 
     public Context context;
-//    public List<Educ> list;
+    public List<Educ> list;
     public ClickListener listener;
 
+    public Adapter(Context context, List<Educ> list, ClickListener listener){
+        this.context = context;
+        this.list = list;
+        this.listener = listener;
+    }
     @NonNull
     @Override
     public Adapter.AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,7 +37,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
 
@@ -42,7 +48,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder> {
 
     public static class AdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-
+        EditText school_edittext;
 
 
         public AdapterViewHolder(@NonNull View itemView, ClickListener clickListener) {
