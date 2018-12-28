@@ -25,14 +25,12 @@ class PersonalFragmentPresenterImpl(private val view: PersonalFragmentContract.V
             view.setEmailError("Need an Email To Deliver Your Offer Letters.")
             return false
         }
-
-
         return true
     }
 
     override fun isValidMobileNumber(mobileNumber: String): Boolean {
         if (mobileNumber.isEmpty()){
-            view.setMobilePhoneError("For Those Telephonic Interviews? Right.")
+            view.setMobilePhoneError("For those telephonic Interviews? Right.")
             return false
         }
 
