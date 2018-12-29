@@ -8,7 +8,6 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.himanshurawat.portfolio.R;
-import com.himanshurawat.portfolio.ui.MainActivityContract;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder> {
     @NonNull
     @Override
     public Adapter.AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.educ_recycler_layout,parent,false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.education_recycler_view_item,parent,false);
         return new AdapterViewHolder(itemView,listener);
     }
 
