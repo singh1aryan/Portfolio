@@ -6,14 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.himanshurawat.portfolio.R
 import com.himanshurawat.portfolio.adapterjava.Educ
+import kotlinx.android.synthetic.main.fragment_education.*
 
 class EducationFragment: Fragment(), EducationFragmentContract.View {
 
-    val education: ArrayList<Educ> = ArrayList()
+    private val education: ArrayList<Educ> = ArrayList()
     private lateinit var addEduc: TextInputEditText
     private lateinit var backButton: MaterialButton
     private lateinit var nextButton: MaterialButton
@@ -39,6 +41,10 @@ class EducationFragment: Fragment(), EducationFragmentContract.View {
 
     fun addEduc() {
     // add the list rv here
+//        val educ: Educ("",5,"","")
+//        education.add(educ)
+//        educ_rv.layoutManager = LinearLayoutManager(this)
+//        educ_rv.adapter = EducationFragmentAdapter(education, this)
 
     }
 }

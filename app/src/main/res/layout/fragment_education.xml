@@ -12,7 +12,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/addEduc">
+            app:layout_constraintBottom_toTopOf="@+id/addEduc" android:id="@+id/educ_rv">
 
     </androidx.recyclerview.widget.RecyclerView>
 
