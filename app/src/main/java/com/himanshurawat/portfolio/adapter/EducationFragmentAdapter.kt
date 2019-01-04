@@ -1,6 +1,8 @@
 package com.himanshurawat.portfolio.adapter
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +25,90 @@ class EducationFragmentAdapter(private val context: Context,private val list: Mu
         val pos = holder.adapterPosition
         val item = list[pos]
         holder.qualificationTextView.text = "Qualification ${pos+1}"
+
+        holder.schoolNameTextInputEditText.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(s != null) {
+                    list[pos].school = s.toString()
+                }
+            }
+
+        })
+
+        holder.gpaTextInputEditText.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(s != null) {
+                    list[pos].gpa = s.toString()
+                }
+            }
+
+        })
+
+        holder.yearOfCompletionTextInputEditText.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(s != null && s.isNotEmpty()) {
+                    list[pos].yearOfCompletion = s.toString()
+                }
+            }
+        })
+
+        holder.courseTextInputEditText.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(s != null && s.isNotEmpty()) {
+                    list[pos].course = s.toString()
+                }
+            }
+        })
+
+        holder.majorTextInputEditText.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(s != null && s.isNotEmpty()) {
+                    list[pos].major = s.toString()
+                }
+            }
+        })
+
+
     }
 
 

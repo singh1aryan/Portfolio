@@ -7,35 +7,35 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/education_recycler_view_item_qualification_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Qualification 1"
-        android:textAllCaps="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/education_recycler_view_item_qualification_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Qualification 1"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/education_recycler_view_item_school_text_input_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="School/College Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_qualification_text_view">
+            android:id="@+id/education_recycler_view_item_school_text_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="School/College Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_qualification_text_view">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/education_recycler_view_item_school_text_input_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                android:id="@+id/education_recycler_view_item_school_text_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

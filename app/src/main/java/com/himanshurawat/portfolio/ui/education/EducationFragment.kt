@@ -42,6 +42,7 @@ class EducationFragment: Fragment(), EducationFragmentContract.View {
         nextButton = view.findViewById(R.id.nextButton)
         educationList = arrayListOf()
         educationList.add(Education())
+        educationList.add(Education())
         educationAdapter = EducationFragmentAdapter(context!!,educationList)
         educationRecyclerView = view.findViewById(R.id.fragment_education_recycler_view)
         educationRecyclerView.adapter = educationAdapter
