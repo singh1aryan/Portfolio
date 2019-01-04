@@ -22,12 +22,12 @@ class WorkexFragment: Fragment(), EducationFragmentContract.View {
     private lateinit var educationRecyclerView: RecyclerView
     private lateinit var educationAdapter: EducationFragmentAdapter
 
-    private lateinit var addEduc: TextInputEditText
+    private lateinit var addWorkex: TextInputEditText
     private lateinit var backButton: MaterialButton
     private lateinit var nextButton: MaterialButton
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_education,container,false)
+        val view = inflater.inflate(R.layout.fragment_workex,container,false)
 
         setup(view)
 
@@ -42,6 +42,7 @@ class WorkexFragment: Fragment(), EducationFragmentContract.View {
         nextButton = view.findViewById(R.id.nextButton)
         educationList = arrayListOf()
         educationList.add(Education())
+
         educationAdapter = EducationFragmentAdapter(context!!,educationList)
         educationRecyclerView = view.findViewById(R.id.fragment_education_recycler_view)
         educationRecyclerView.adapter = educationAdapter
@@ -49,7 +50,7 @@ class WorkexFragment: Fragment(), EducationFragmentContract.View {
 
     }
 
-    fun addEduc() {
+    fun addWorkex() {
         // add the list rv here
 //        val educ: Educ("",5,"","")
 //        education.add(educ)
@@ -58,111 +59,3 @@ class WorkexFragment: Fragment(), EducationFragmentContract.View {
 
     }
 }
-
-//let click = false;
-//function buttonclick(){
-//    var property = document.getElementById('btn0,0');
-//    if(!click){
-//        property.style.backgroundColor = '#FF0000'
-//        click = true;
-//    }
-//    else{
-//        property.style.backgroundColor = '#000000'
-//        click = false;
-//    }
-//}
-//// function buttonclick(){
-////     var property = document.getElementById('btn0,1');
-////     if(!click){
-////         property.style.backgroundColor = '#FF0000'
-////         click = true;
-////     }
-////     else{
-////         property.style.backgroundColor = '#000000'
-////         click = false;
-////     }
-//// }
-//let board_array = [];
-//for(let i=0;i<13;++i){
-//    let c= [];
-//    for(let j=0;j<13;++j){
-//        c.push(document.getElementById('btn' + i + ',' + j));
-//    }
-//    board_array.push(c);
-//}
-
-// for(){
-//     for(){
-
-//     }
-// }
-
-
-
-// make 12 arrays of the columns
-// add all the arrays to a new array
-// you get a 2D array of the points
-// row_array.push(document.getElementById('btn01'),
-//     document.getElementById('btn02'),
-//     document.getElementById('btn03')
-
-//     );
-
-// column_array.push(document.getElementById('btn01'),
-//     document.getElementById('btn02'),
-//     document.getElementById('btn03')
-//let click = false;
-//function buttonclick(){
-//    var property = document.getElementById('btn0,0');
-//    if(!click){
-//        property.style.backgroundColor = '#FF0000'
-//        click = true;
-//    }
-//    else{
-//        property.style.backgroundColor = '#000000'
-//        click = false;
-//    }
-//}
-//// function buttonclick(){
-////     var property = document.getElementById('btn0,1');
-////     if(!click){
-////         property.style.backgroundColor = '#FF0000'
-////         click = true;
-////     }
-////     else{
-////         property.style.backgroundColor = '#000000'
-////         click = false;
-////     }
-//// }
-//let board_array = [];
-//for(let i=0;i<13;++i){
-//    let c= [];
-//    for(let j=0;j<13;++j){
-//        c.push(document.getElementById('btn' + i + ',' + j));
-//    }
-//    board_array.push(c);
-//}
-//
-//for(){
-//    for(){
-//
-//    }
-//}
-//
-//
-//
-//// make 12 arrays of the columns
-//// add all the arrays to a new array
-//// you get a 2D array of the points
-//row_array.push(document.getElementById('btn01'),
-//document.getElementById('btn02'),
-//document.getElementById('btn03')
-//
-//);
-//
-//column_array.push(document.getElementById('btn01'),
-//document.getElementById('btn02'),
-//document.getElementById('btn03')
-//
-//);
-//     );
