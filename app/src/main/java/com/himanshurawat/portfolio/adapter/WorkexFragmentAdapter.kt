@@ -13,7 +13,8 @@ import com.himanshurawat.portfolio.pojo.Education
 class WorkexFragmentAdapter(private val context: Context,private val list: MutableList<Education> )
     : RecyclerView.Adapter<WorkexFragmentAdapter.WorkexViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkexViewHolder {
-        return WorkexViewHolder(LayoutInflater.from(context).inflate(R.layout.education_recycler_view_item,parent,false))
+        return WorkexViewHolder(LayoutInflater.from(context).inflate
+            (R.layout.workex_recycler_view_item,parent,false))
     }
 
     override fun getItemCount(): Int {
