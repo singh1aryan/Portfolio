@@ -12,7 +12,13 @@ interface MainActivityContract {
 
         fun loadEducationFragment()
 
+        fun loadWorkExFragment()
+
         fun popToPersonalFragment()
+
+        fun popToEducationFragment()
+
+        fun popToWorkExFragment()
 
         fun popFragment()
 

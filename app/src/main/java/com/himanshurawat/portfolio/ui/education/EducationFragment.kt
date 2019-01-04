@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,18 +12,28 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.himanshurawat.portfolio.R
 import com.himanshurawat.portfolio.adapter.EducationFragmentAdapter
-import com.himanshurawat.portfolio.adapterjava.Educ
 import com.himanshurawat.portfolio.pojo.Education
 import com.himanshurawat.portfolio.ui.main.PortfolioMakerEventListener
-import kotlinx.android.synthetic.main.fragment_education.*
 
-class EducationFragment: Fragment(), EducationFragmentContract.View {
+class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClickListener {
+    override fun onClick(v: View?) {
+        if(v != null){
+            when(v.id){
+
+                backButton.id ->{
+                    listener.backButtonClicked("EducationFragment")
+                }
+
+                nextQuestionButton.id ->{
+                    listener.nextQuestionButtonClicked("EducationFragment")
+                }
+            }
+        }
+    }
 
     private lateinit var educationList: MutableList<Education>
     private lateinit var educationRecyclerView: RecyclerView
     private lateinit var educationAdapter: EducationFragmentAdapter
-
-    private lateinit var addEduc: TextInputEditText
     private lateinit var backButton: MaterialButton
     private lateinit var nextQuestionButton: MaterialButton
 
@@ -45,35 +54,14 @@ class EducationFragment: Fragment(), EducationFragmentContract.View {
 
         setup(view)
 
-        nextQuestionButton.setOnClickListener {
-
-//            resetTextInputLayoutErrorMessages()
-
-//            val firstName = firstNameTextInputEditText.text.toString()
-//            val email = emailTextInputEditText.text.toString()
-//            val mobileNumber = mobileNumberTextInputEditText.text.toString()
-
-//            if(presenter.validate(firstName,email,mobileNumber)){
-                listener.nextQuestionButtonClicked("EducationFragment")
-//            }
-
-            addEduc.setOnClickListener{
-                var educ = Education("","","","","")
-                educationList.add(educ)
-                educationAdapter.notifyDataSetChanged()
-            }
-
-
-        }
-
         return view
     }
 
     private fun setup(view: View){
         //TextInputEditText
         //addEduc = view.findViewById(R.id.addEduc)
-        backButton = view.findViewById(R.id.backButton)
-        nextQuestionButton = view.findViewById(R.id.nextButton)
+        backButton = view.findViewById(R.id.fragment_education_go_back_material_button)
+        nextQuestionButton = view.findViewById(R.id.fragment_education_next_question_material_button)
         educationList = arrayListOf()
         educationList.add(Education())
         educationList.add(Education())
@@ -81,15 +69,9 @@ class EducationFragment: Fragment(), EducationFragmentContract.View {
         educationRecyclerView = view.findViewById(R.id.fragment_education_recycler_view)
         educationRecyclerView.adapter = educationAdapter
         educationRecyclerView.layoutManager = LinearLayoutManager(context!!,RecyclerView.VERTICAL,false)
+        backButton.setOnClickListener(this)
+        nextQuestionButton.setOnClickListener(this)
 
     }
 
-    fun addEduc() {
-    // add the list rv here
-//        val educ: Educ("",5,"","")
-//        education.add(educ)
-//        educ_rv.layoutManager = LinearLayoutManager(this)
-//        educ_rv.adapter = EducationAdapter(education, this)
-
-    }
 }

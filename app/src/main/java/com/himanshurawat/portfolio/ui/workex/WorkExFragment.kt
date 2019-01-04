@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,11 +11,9 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.himanshurawat.portfolio.R
 import com.himanshurawat.portfolio.adapter.EducationFragmentAdapter
-import com.himanshurawat.portfolio.adapterjava.Educ
 import com.himanshurawat.portfolio.pojo.Education
-import kotlinx.android.synthetic.main.fragment_education.*
 
-class WorkexFragment: Fragment(), EducationFragmentContract.View {
+class WorkExFragment: Fragment(), EducationFragmentContract.View {
 
     private lateinit var educationList: MutableList<Education>
     private lateinit var educationRecyclerView: RecyclerView
@@ -38,8 +35,8 @@ class WorkexFragment: Fragment(), EducationFragmentContract.View {
     private fun setup(view: View){
         //TextInputEditText
         //addEduc = view.findViewById(R.id.addEduc)
-        backButton = view.findViewById(R.id.backButton)
-        nextButton = view.findViewById(R.id.nextButton)
+        backButton = view.findViewById(R.id.fragment_education_go_back_material_button)
+        nextButton = view.findViewById(R.id.fragment_education_next_question_material_button)
         educationList = arrayListOf()
         educationList.add(Education())
 

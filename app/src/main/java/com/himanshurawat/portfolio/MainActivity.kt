@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager
 import com.himanshurawat.portfolio.ui.MainActivityContract
 import com.himanshurawat.portfolio.ui.MainActivityPresenterImpl
 import com.himanshurawat.portfolio.ui.education.EducationFragment
+import com.himanshurawat.portfolio.ui.education.WorkExFragment
 import com.himanshurawat.portfolio.ui.main.PortfolioMakerEventListener
 import com.himanshurawat.portfolio.ui.personal.PersonalFragment
 
@@ -71,6 +72,13 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener, PortfolioMakerEv
         return false
     }
 
+    override fun loadPersonalFragment() {
+        fragmentManager.beginTransaction().
+            replace(R.id.content_main_frame_layout_container, PersonalFragment(),"PersonalFragment").
+            addToBackStack("PersonalFragment").
+            commit()
+    }
+
     override fun loadEducationFragment() {
         fragmentManager.beginTransaction().
                 replace(R.id.content_main_frame_layout_container,EducationFragment(),"EducationFragment").
@@ -78,11 +86,20 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener, PortfolioMakerEv
                 commit()
     }
 
-    override fun loadPersonalFragment() {
+
+    override fun loadWorkExFragment() {
         fragmentManager.beginTransaction().
-                replace(R.id.content_main_frame_layout_container, PersonalFragment(),"PersonalFragment").
-                addToBackStack("PersonalFragment").
-                commit()
+            replace(R.id.content_main_frame_layout_container,WorkExFragment(),"WorkExFragment").
+            addToBackStack("WorkExFragment").
+            commit()
+    }
+
+    override fun popToEducationFragment() {
+        fragmentManager.popBackStack("EducationFragment",0)
+    }
+
+    override fun popToWorkExFragment() {
+        fragmentManager.popBackStack("WorkExFragment",0)
     }
 
     override fun popToPersonalFragment() {
