@@ -14,7 +14,8 @@ import com.himanshurawat.portfolio.pojo.Education
 
 class EducationFragmentAdapter(private val context: Context,private val list: MutableList<Education> ): RecyclerView.Adapter<EducationFragmentAdapter.EducationViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EducationViewHolder {
-        return EducationViewHolder(LayoutInflater.from(context).inflate(R.layout.education_recycler_view_item,parent,false))
+        return EducationViewHolder(LayoutInflater.from(context).
+            inflate(R.layout.education_recycler_view_item,parent,false))
     }
 
     override fun getItemCount(): Int {

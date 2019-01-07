@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical" android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fragment_education_recycler_view"
+            android:id="@+id/fragment_work_ex_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/fragment_education_next_question_material_button"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_work_ex_next_question_material_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -21,7 +24,7 @@
 
 
     <com.google.android.material.button.MaterialButton
-            android:id="@+id/fragment_education_next_question_material_button"
+            android:id="@+id/fragment_work_ex_next_question_material_button"
             android:layout_width="wrap_content"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_height="wrap_content"
@@ -44,7 +47,7 @@
             android:layout_marginBottom="16dp"
             android:text="Go Back"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:id="@+id/fragment_education_go_back_material_button"/>
+            app:layout_constraintStart_toStartOf="parent" android:id="@+id/fragment_work_ex_go_back_material_button"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

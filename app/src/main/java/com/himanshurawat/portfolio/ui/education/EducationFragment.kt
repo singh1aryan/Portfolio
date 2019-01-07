@@ -36,6 +36,7 @@ class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClic
     private lateinit var educationAdapter: EducationFragmentAdapter
     private lateinit var backButton: MaterialButton
     private lateinit var nextQuestionButton: MaterialButton
+    private lateinit var addEducation: MaterialButton
 
     private lateinit var listener: PortfolioMakerEventListener
 
@@ -54,6 +55,9 @@ class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClic
 
         setup(view)
 
+        addEducation.setOnClickListener{
+            addEduc()
+        }
         return view
     }
 
@@ -62,16 +66,25 @@ class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClic
         //addEduc = view.findViewById(R.id.addEduc)
         backButton = view.findViewById(R.id.fragment_education_go_back_material_button)
         nextQuestionButton = view.findViewById(R.id.fragment_education_next_question_material_button)
+        addEducation = view.findViewById(R.id.fragment_education_add_material_button)
         educationList = arrayListOf()
+
         educationList.add(Education())
         educationList.add(Education())
+
         educationAdapter = EducationFragmentAdapter(context!!,educationList)
         educationRecyclerView = view.findViewById(R.id.fragment_education_recycler_view)
         educationRecyclerView.adapter = educationAdapter
+
         educationRecyclerView.layoutManager = LinearLayoutManager(context!!,RecyclerView.VERTICAL,false)
         backButton.setOnClickListener(this)
         nextQuestionButton.setOnClickListener(this)
 
+    }
+
+    private fun addEduc(){
+        educationList.add(Education())
+        educationAdapter.notifyDataSetChanged()
     }
 
 }

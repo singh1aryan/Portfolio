@@ -113,22 +113,22 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/education_recycler_view_item_course_text_input_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Course"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_position_text_input_layout">
+            android:id="@+id/education_recycler_view_item_course_text_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Course (Bachelors / Masters)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_position_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/education_recycler_view_item_course_text_input_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                android:id="@+id/education_recycler_view_item_course_text_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

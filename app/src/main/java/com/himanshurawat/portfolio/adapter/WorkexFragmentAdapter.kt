@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import com.himanshurawat.portfolio.R
 import com.himanshurawat.portfolio.pojo.Education
+import com.himanshurawat.portfolio.pojo.WorkEx
 
-class WorkexFragmentAdapter(private val context: Context,private val list: MutableList<Education> )
+class WorkexFragmentAdapter(private val context: Context,private val list: MutableList<WorkEx> )
     : RecyclerView.Adapter<WorkexFragmentAdapter.WorkexViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkexViewHolder {
         return WorkexViewHolder(LayoutInflater.from(context).inflate
@@ -24,17 +25,17 @@ class WorkexFragmentAdapter(private val context: Context,private val list: Mutab
     override fun onBindViewHolder(holder: WorkexViewHolder, position: Int) {
         val pos = holder.adapterPosition
         val item = list[pos]
-        holder.qualificationTextView.text = "Qualification ${pos+1}"
+//        holder.qualificationTextView.text = "Qualification ${pos+1}"
     }
 
 
     class WorkexViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val schoolNameTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_school_text_input_edit_text)
-        val gpaTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_gpa_text_input_edit_text)
-        val yearOfCompletionTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_year_of_completion_text_input_edit_text)
-        val majorTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_major_text_input_edit_text)
-        val courseTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_course_text_input_edit_text)
-        val qualificationTextView: TextView = itemView.findViewById(R.id.education_recycler_view_item_qualification_text_view)
+//        val schoolNameTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_school_text_input_edit_text)
+//        val gpaTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_gpa_text_input_edit_text)
+//        val yearOfCompletionTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_year_of_completion_text_input_edit_text)
+//        val majorTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_major_text_input_edit_text)
+//        val courseTextInputEditText: TextInputEditText = itemView.findViewById(R.id.education_recycler_view_item_course_text_input_edit_text)
+//        val qualificationTextView: TextView = itemView.findViewById(R.id.education_recycler_view_item_qualification_text_view)
     }
 
 }
