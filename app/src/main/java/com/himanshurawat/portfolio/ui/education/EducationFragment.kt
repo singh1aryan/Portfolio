@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.himanshurawat.portfolio.R
 import com.himanshurawat.portfolio.adapter.EducationFragmentAdapter
 import com.himanshurawat.portfolio.pojo.Education
+import com.himanshurawat.portfolio.pojo.SwipeController
 import com.himanshurawat.portfolio.ui.main.PortfolioMakerEventListener
+
 
 class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClickListener {
     override fun onClick(v: View?) {
@@ -57,12 +60,19 @@ class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClic
         addEducation.setOnClickListener{
             addEduc()
         }
+        initSwipe()
         return view
     }
 
     private fun setup(view: View){
         //TextInputEditText
         //addEduc = view.findViewById(R.id.addEduc)
+
+
+//        var swipeController: SwipeController
+//        val itemTouchhelper = ItemTouchHelper(swipeController)
+//        itemTouchhelper.attachToRecyclerView(educationRecyclerView)
+
         backButton = view.findViewById(R.id.fragment_education_go_back_material_button)
         nextQuestionButton = view.findViewById(R.id.fragment_education_next_question_material_button)
         addEducation = view.findViewById(R.id.fragment_education_add_material_button)
@@ -86,4 +96,33 @@ class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClic
         educationAdapter.notifyItemInserted(educationList.size - 1)
     }
 
-}
+    private fun initSwipe() {
+        val simpleItemTouchCallback = object : ItemTouchHelper.SimpleCallback(
+            0, ItemTouchHelper.LEFT
+        ) {
+
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+
+                if (direction == ItemTouchHelper.LEFT) {
+                    educationList.removeAt(position)
+                    educationAdapter.notifyDataSetChanged()
+                }
+            }
+
+        }
+        val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
+        itemTouchHelper.attachToRecyclerView(educationRecyclerView)
+    }
+
+
+
+        }
