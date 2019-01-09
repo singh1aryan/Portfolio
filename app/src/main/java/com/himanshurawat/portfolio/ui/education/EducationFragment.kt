@@ -83,7 +83,7 @@ class EducationFragment: Fragment(), EducationFragmentContract.View, View.OnClic
 
     private fun addEduc(){
         educationList.add(Education())
-        educationAdapter.notifyDataSetChanged()
+        educationAdapter.notifyItemInserted(educationList.size - 1)
     }
 
 }

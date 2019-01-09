@@ -2,42 +2,42 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:layout_height="match_parent">
 
 
     <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="16dp"
-            android:fillViewport="true"
-            app:layout_constraintBottom_toTopOf="@+id/fragment_education_next_question_material_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_education_next_question_material_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/fragment_education_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:nestedScrollingEnabled="false">
+                android:id="@+id/fragment_education_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="false">
 
             </androidx.recyclerview.widget.RecyclerView>
 
 
             <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fragment_education_add_material_button"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end|bottom"
-                    android:layout_marginEnd="16dp"
-                    android:text="Add"
-                    android:textColor="@color/colorGrey" />
+                android:id="@+id/fragment_education_add_material_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="16dp"
+                android:text="Add"
+                android:textColor="@color/colorGrey" />
 
         </LinearLayout>
 
@@ -49,19 +49,19 @@
 
 
     <com.google.android.material.button.MaterialButton
-            android:id="@+id/fragment_education_next_question_material_button"
-            android:layout_width="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="Next Question"
-            app:backgroundTint="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="8dp"
-    />
+        android:id="@+id/fragment_education_next_question_material_button"
+        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Next Question"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        />
 
     <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
