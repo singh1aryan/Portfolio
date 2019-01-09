@@ -7,19 +7,20 @@
                                                    android:orientation="vertical">
 
     <TextView
-            android:id="@+id/education_recycler_view_item_workex_text_view"
+            android:id="@+id/workex_recycler_view_item_workex_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="Work Experience 1"
             android:textAllCaps="true"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/education_recycler_view_item_position_text_input_layout"
+            android:id="@+id/workex_recycler_view_item_position_text_input_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +30,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="14dp"
-            app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_company_text_input_layout">
+            app:layout_constraintTop_toBottomOf="@+id/workex_recycler_view_item_company_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/workex_recycler_view_item_position_text_input_edit_text"
@@ -40,7 +41,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/education_recycler_view_item_company_text_input_layout"
+            android:id="@+id/workex_recycler_view_item_company_text_input_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +51,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_workex_text_view">
+            app:layout_constraintTop_toBottomOf="@+id/workex_recycler_view_item_workex_text_view">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/workex_recycler_view_item_company_text_input_edit_text"
@@ -62,7 +63,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/education_recycler_view_item_start_date_text_input_layout"
+            android:id="@+id/workex_recycler_view_item_start_date_text_input_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -71,10 +72,10 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="14dp"
-            app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_position_text_input_layout">
+            app:layout_constraintTop_toBottomOf="@+id/workex_recycler_view_item_position_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/education_recycler_view_item_start_date_text_input_edit_text"
+                android:id="@+id/workex_recycler_view_item_start_date_text_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Start Date"/>
@@ -90,7 +91,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/education_recycler_view_item_end_date_text_input_layout"
+            android:id="@+id/workex_recycler_view_item_end_date_text_input_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -100,17 +101,17 @@
             app:layout_constraintStart_toEndOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="1.0"
             android:layout_marginTop="14dp"
-            app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_position_text_input_layout">
+            app:layout_constraintTop_toBottomOf="@+id/workex_recycler_view_item_position_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/education_recycler_view_item_end_date_text_input_edit_text"
+                android:id="@+id/workex_recycler_view_item_end_date_text_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:hint="End Date"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/education_recycler_view_item_experience_text_input_layout"
+            android:id="@+id/workex_recycler_view_item_experience_text_input_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="272dp"
@@ -119,14 +120,16 @@
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/education_recycler_view_item_start_date_text_input_layout"
+            app:layout_constraintTop_toBottomOf="@+id/workex_recycler_view_item_start_date_text_input_layout"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/education_recycler_view_item_experience_text_input_edit_text"
+                android:id="@+id/workex_recycler_view_item_experience_text_input_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:hint="Experience"/>
+                android:layout_height="match_parent"
+                android:gravity="top|start"
+                android:hint="Experience"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

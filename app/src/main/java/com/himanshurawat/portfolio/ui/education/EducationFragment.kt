@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
 import com.himanshurawat.portfolio.R
 import com.himanshurawat.portfolio.adapter.EducationFragmentAdapter
 import com.himanshurawat.portfolio.pojo.Education

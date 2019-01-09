@@ -1,26 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical" android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fragment_education_recycler_view"
+    <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="324dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/fragment_education_next_question_material_button"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_projects_next_question_material_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fragment_projects_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:nestedScrollingEnabled="false">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fragment_projects_add_material_button"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="16dp"
+                    android:text="Add"
+                    android:textColor="@color/colorGrey" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 
 
     <com.google.android.material.button.MaterialButton
-            android:id="@+id/fragment_education_next_question_material_button"
+            android:id="@+id/fragment_projects_next_question_material_button"
             android:layout_width="wrap_content"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_height="wrap_content"
@@ -44,18 +76,9 @@
             android:text="Go Back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/fragment_education_go_back_material_button"/>
-    <com.google.android.material.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textColor="@color/colorGrey"
-            android:text="Add"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/fragment_education_add_material_button"
-            android:layout_marginTop="9dp"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_education_recycler_view"/>
+            android:id="@+id/fragment_projects_go_back_material_button"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

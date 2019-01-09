@@ -30,9 +30,9 @@ class SkillsFragment: Fragment() {
     }
 
     private fun setup(view: View){
-        addButton = view.findViewById(R.id.fragment_course_work_add_course_button)
-        courseTextInputEditText = view.findViewById(R.id.fragment_course_work_course_name_text_input_edit_text)
-        coursesTextLayout = view.findViewById(R.id.fragment_course_work_courses_text_input_layout)
+//        addButton = view.findViewById(R.id.fragment_course_work_add_course_button)
+//        courseTextInputEditText = view.findViewById(R.id.fragment_course_work_course_name_text_input_edit_text)
+//        coursesTextLayout = view.findViewById(R.id.fragment_course_work_courses_text_input_layout)
     }
 
     private fun addCourse(){

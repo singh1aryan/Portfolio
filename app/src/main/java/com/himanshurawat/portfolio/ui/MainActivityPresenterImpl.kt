@@ -6,7 +6,7 @@ class MainActivityPresenterImpl(private val view: MainActivityContract.View): Ma
     override fun nextFragment(fragmentTag: String): String {
        when(fragmentTag){
 
-           "PersonalFragment" ->{
+           "PersonalFragment" -> {
                view.updateSeekbar(40)
                view.updateStepTitleTextView("Educational Qualification")
                view.updateStepTextView("2 OF 5")
@@ -20,9 +20,17 @@ class MainActivityPresenterImpl(private val view: MainActivityContract.View): Ma
                view.updateStepTextView("3 OF 5")
                view.loadWorkExFragment()
                return "WorkExFragment"
-
-
            }
+
+           "WorkExFragment" ->{
+               view.updateSeekbar(80)
+               view.updateStepTitleTextView("Projects")
+               view.updateStepTextView("8 OF 5")
+               view.loadWorkExFragment()
+               return "ProjectsFragment"
+           }
+
+
        }
         return "PersonalFragment"
     }

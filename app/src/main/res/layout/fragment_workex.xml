@@ -8,18 +8,46 @@
         android:layout_height="match_parent">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fragment_work_ex_recycler_view"
+    <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
+            android:fillViewport="true"
             app:layout_constraintBottom_toTopOf="@+id/fragment_work_ex_next_question_material_button"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fragment_work_ex_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:nestedScrollingEnabled="false">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fragment_work_ex_add_material_button"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="16dp"
+                    android:text="Add"
+                    android:textColor="@color/colorGrey" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 
 
@@ -47,7 +75,10 @@
             android:layout_marginBottom="16dp"
             android:text="Go Back"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:id="@+id/fragment_work_ex_go_back_material_button"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/fragment_work_ex_go_back_material_button"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
