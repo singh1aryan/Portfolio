@@ -113,4 +113,5 @@ class PersonalFragment : androidx.fragment.app.Fragment(), PersonalFragmentContr
         emailTextInputLayout.isErrorEnabled = false
         emailTextInputLayout.helperText = "*Required"
     }
+
 }

@@ -25,8 +25,8 @@ class MainActivityPresenterImpl(private val view: MainActivityContract.View): Ma
            "WorkExFragment" ->{
                view.updateSeekbar(80)
                view.updateStepTitleTextView("Projects")
-               view.updateStepTextView("8 OF 5")
-               view.loadWorkExFragment()
+               view.updateStepTextView("4 OF 5")
+               view.loadProjectsFragment()
                return "ProjectsFragment"
            }
 
@@ -52,6 +52,14 @@ class MainActivityPresenterImpl(private val view: MainActivityContract.View): Ma
                 view.updateStepTextView("2 OF 5")
                 view.popToEducationFragment()
                 return "EducationFragment"
+            }
+
+            "ProjectsFragment" ->{
+                view.updateSeekbar(40)
+                view.updateStepTitleTextView("Work Experience")
+                view.updateStepTextView("3 OF 5")
+                view.popToWorkExFragment()
+                return "WorkExFragment"
             }
 
         }

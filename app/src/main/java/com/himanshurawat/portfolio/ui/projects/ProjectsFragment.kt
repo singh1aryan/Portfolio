@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
@@ -58,6 +59,7 @@ class ProjectsFragment: Fragment(), EducationFragmentContract.View, View.OnClick
         addProject.setOnClickListener{
             addProject()
         }
+        initSwipe()
         return view
     }
 
@@ -80,5 +82,32 @@ class ProjectsFragment: Fragment(), EducationFragmentContract.View, View.OnClick
     fun addProject() {
         projectsList.add(Projects())
         projectsAdapter.notifyDataSetChanged()
+    }
+
+    private fun initSwipe() {
+        val simpleItemTouchCallback = object : ItemTouchHelper.SimpleCallback(
+            0, ItemTouchHelper.LEFT
+        ) {
+
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+
+                if (direction == ItemTouchHelper.LEFT) {
+                    projectsList.removeAt(position)
+                    projectsAdapter.notifyDataSetChanged()
+                }
+            }
+
+        }
+        val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
+        itemTouchHelper.attachToRecyclerView(projectsRecyclerView)
     }
 }
