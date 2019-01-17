@@ -1,6 +1,7 @@
-package com.himanshurawat.portfolio.ui
+package com.himanshurawat.portfolio.ui.main
 
-class MainActivityPresenterImpl(private val view: MainActivityContract.View): MainActivityContract.Presenter {
+class MainActivityPresenterImpl(private val view: MainActivityContract.View):
+    MainActivityContract.Presenter {
 
 
     override fun nextFragment(fragmentTag: String): String {

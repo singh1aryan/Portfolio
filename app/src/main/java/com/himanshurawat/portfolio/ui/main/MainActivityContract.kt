@@ -1,4 +1,4 @@
-package com.himanshurawat.portfolio.ui
+package com.himanshurawat.portfolio.ui.main
 
 interface MainActivityContract {
 

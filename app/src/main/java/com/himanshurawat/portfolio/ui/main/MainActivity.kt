@@ -1,4 +1,4 @@
-package com.himanshurawat.portfolio
+package com.himanshurawat.portfolio.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,14 +6,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.FrameLayout
-import androidx.fragment.app.FragmentManager
-import com.himanshurawat.portfolio.ui.MainActivityContract
-import com.himanshurawat.portfolio.ui.MainActivityPresenterImpl
+import com.himanshurawat.portfolio.R
 import com.himanshurawat.portfolio.ui.education.EducationFragment
 import com.himanshurawat.portfolio.ui.education.ProjectsFragment
 import com.himanshurawat.portfolio.ui.education.WorkExFragment
-import com.himanshurawat.portfolio.ui.main.PortfolioMakerEventListener
 import com.himanshurawat.portfolio.ui.personal.PersonalFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
