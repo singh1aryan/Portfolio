@@ -76,12 +76,14 @@ class WorkExFragment: Fragment(), EducationFragmentContract.View, View.OnClickLi
         workExRecyclerView = view.findViewById(R.id.fragment_work_ex_recycler_view)
         workExRecyclerView.adapter = workExAdapter
         workExRecyclerView.layoutManager = LinearLayoutManager(context!!,RecyclerView.VERTICAL,false)
+        backButton.setOnClickListener(this)
+        nextButton.setOnClickListener(this)
 
     }
 
-    fun addWorkex() {
+    private fun addWorkex() {
         workExList.add(WorkEx())
-        workExAdapter.notifyDataSetChanged()
+        workExAdapter.notifyItemInserted(workExList.size - 1)
     }
     private fun initSwipe() {
         val simpleItemTouchCallback = object : ItemTouchHelper.SimpleCallback(

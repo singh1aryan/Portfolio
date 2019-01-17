@@ -56,7 +56,7 @@ class MainActivityPresenterImpl(private val view: MainActivityContract.View):
             }
 
             "ProjectsFragment" ->{
-                view.updateSeekbar(40)
+                view.updateSeekbar(60)
                 view.updateStepTitleTextView("Work Experience")
                 view.updateStepTextView("3 OF 5")
                 view.popToWorkExFragment()

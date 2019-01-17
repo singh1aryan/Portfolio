@@ -8,7 +8,7 @@ import com.himanshurawat.portfolio.db.PortfolioEntity
 
 data class Education(
     var id: Long = 0L,
-    var user_id: Long,
+    var user_id: Long = 0L,
     var school: String = "",
     var gpa: String = "",
     var yearOfCompletion: String = "",

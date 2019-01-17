@@ -53,7 +53,7 @@ class ProjectsFragment: Fragment(), EducationFragmentContract.View, View.OnClick
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_workex,container,false)
+        val view = inflater.inflate(R.layout.fragment_projects,container,false)
 
         setup(view)
         addProject.setOnClickListener{
@@ -66,20 +66,22 @@ class ProjectsFragment: Fragment(), EducationFragmentContract.View, View.OnClick
     private fun setup(view: View){
         //TextInputEditText
         addProject = view.findViewById(R.id.fragment_projects_add_material_button)
-        backButton = view.findViewById(R.id.fragment_work_ex_go_back_material_button)
-        nextButton = view.findViewById(R.id.fragment_work_ex_next_question_material_button)
+        backButton = view.findViewById(R.id.fragment_projects_go_back_material_button)
+        nextButton = view.findViewById(R.id.fragment_projects_next_question_material_button)
 
         projectsList = arrayListOf()
         projectsList.add(Projects())
 
         projectsAdapter = ProjectsFragmentAdapter(context!!,projectsList)
-        projectsRecyclerView = view.findViewById(R.id.fragment_work_ex_recycler_view)
+        projectsRecyclerView = view.findViewById(R.id.fragment_projects_recycler_view)
         projectsRecyclerView.adapter = projectsAdapter
         projectsRecyclerView.layoutManager = LinearLayoutManager(context!!,RecyclerView.VERTICAL,false)
 
+        nextButton.setOnClickListener(this)
+        backButton.setOnClickListener(this)
     }
 
-    fun addProject() {
+    private fun addProject() {
         projectsList.add(Projects())
         projectsAdapter.notifyDataSetChanged()
     }
